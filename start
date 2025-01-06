@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if ! docker network ls | grep -q 'boa_network'
+then
+  ./cmd.sh create-network
+  sleep 2
+fi
+
+if docker compose ls | grep -q 'api'
+then
+  ./cmd.sh stop-api
+fi
+
+if docker compose ls | grep -q 'database'
+then
+  ./cmd.sh stop-db
+fi
+
+./cmd.sh start-db
+
+sleep 2
+
+./cmd.sh start-api

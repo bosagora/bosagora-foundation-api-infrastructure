@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if docker compose ls | grep -q 'api'
+then
+  ./cmd.sh stop-api
+fi
+
+if docker compose ls | grep -q 'database'
+then
+  ./cmd.sh stop-db
+fi
+
+if docker network ls | grep -q 'boa_network'
+then
+  ./cmd.sh remove-network
+fi

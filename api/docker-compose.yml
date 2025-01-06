@@ -1,0 +1,20 @@
+services:
+  bosagora-foundations-api:
+    image: bosagora/bosagora-foundations-api:97a45f1b3c72
+    container_name: bosagora-foundations-api
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./config:/app/config
+    env_file:
+      - ~/.boa/env/.global.env
+      - .config.env
+    networks:
+      - boa_network
+
+networks:
+  boa_network:
+    driver: bridge
+    external: true
+    internal: true
