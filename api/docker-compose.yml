@@ -1,6 +1,6 @@
 services:
   bosagora-foundations-api:
-    image: bosagora/bosagora-foundations-api:353f319310be
+    image: bosagora/bosagora-foundations-api:814f2e10f2cb
     container_name: bosagora-foundations-api
     restart: always
     ports:
