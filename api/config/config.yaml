@@ -34,4 +34,4 @@ scheduler:
   items:
     - name: boa
       enable: true
-      expression: "*/10 * * * * *"
+      expression: "0 */5 * * * *"
